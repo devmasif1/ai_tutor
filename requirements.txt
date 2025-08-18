@@ -1,0 +1,41 @@
+# Core AI/ML libraries
+openai
+langchain
+langchain-openai
+langchain-community
+langchain-experimental
+langchain-mongodb
+
+# Vector stores and embeddings
+pymongo
+motor
+
+# Document processing
+pypdf
+python-docx
+python-pptx
+openpyxl
+xlrd
+
+# Web frameworks
+gradio
+fastapi
+uvicorn
+python-multipart
+
+# Data processing and visualization
+numpy
+pandas
+matplotlib
+scikit-learn
+plotly
+seaborn
+
+# Utilities
+python-dotenv
+requests
+zipfile36
+
+# Graph and state management
+langgraph
+

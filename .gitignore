@@ -1,0 +1,32 @@
+# Python cache
+**/__pycache__/
+*.py[cod]
+.Python
+
+# Project-specific files
+src/__pycache__/
+rag_tutor/knowledge_base/
+sample.py
+test.py
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Vector database
+vector_db*/
+# The above covers vector_db/ and vectorr_db/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
