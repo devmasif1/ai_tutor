@@ -57,7 +57,9 @@ Available Context from User's Documents:
 Instructions:
 1. Generate CONCEPTUAL questions that test understanding, not memorization
 2. If coding topic: include dry run problems, coding challenges, and algorithm analysis
-3. Make questions from the context, one you get the general overview of context 
+3. Don't Create quiz if topics are not available in contexts.
+4. Just reply failed to make a quiz and state reason.
+3. Make questions from the context, once you get the general overview of context 
 and what's been the context it is about , you can generate question out of book.
 4. Focus on "why" and "how" rather than "what" - test deep understanding
 5. Include scenario-based and application questions
