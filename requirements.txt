@@ -6,10 +6,11 @@ langchain-community
 langchain-experimental
 langchain-mongodb
 langchain-groq
+langgraph
 
 # Vector stores and embeddings
 pymongo
-motor
+
 
 # Document processing
 pypdf
@@ -24,6 +25,10 @@ fastapi
 uvicorn
 python-multipart
 
+# Security
+bcrypt
+PyJWT
+
 # Data processing and visualization
 numpy
 pandas
@@ -36,7 +41,3 @@ seaborn
 python-dotenv
 requests
 zipfile36
-
-# Graph and state management
-langgraph
-
