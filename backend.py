@@ -232,18 +232,11 @@ async def clear_quiz_reports(user_id: str = Depends(verify_token)):
 
 if __name__ == "__main__":
     import uvicorn
-    import threading, webbrowser, time
 
     host = "0.0.0.0"
-    port = 8000
-
-    def open_swagger():
-        time.sleep(1.0)
-        webbrowser.open(f"http://127.0.0.1:{port}/docs")
+    port = int(os.getenv("PORT", 8000))  # Railway provides $PORT
 
     print("🚀 Starting AI Tutor Backend with Quiz-Based Tracking")
     print(f"📊 MongoDB URI: {MONGO_URI}")
-    
-    
-    threading.Thread(target=open_swagger, daemon=True).start()
+
     uvicorn.run(app, host=host, port=port)
