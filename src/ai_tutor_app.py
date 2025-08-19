@@ -7,8 +7,8 @@ from src.ai_tutor_core import AITutorCore
 
 class AITutorApp:
     def __init__(self):
-        self.core = None  # Will be initialized when user logs in
-        self.backend_url = "http://localhost:8000"
+        self.core = None  
+        self.backend_url = os.getenv("BACKEND_URL", "http://localhost:8000")
         self.token = None
         self.current_user = None
         self.current_user_id = None
