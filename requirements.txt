@@ -5,6 +5,7 @@ langchain-openai
 langchain-community
 langchain-experimental
 langchain-mongodb
+langchain-groq
 
 # Vector stores and embeddings
 pymongo
