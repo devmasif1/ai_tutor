@@ -6,7 +6,7 @@ from datetime import datetime
 from src.ai_tutor_core import AITutorCore
 
 
-BACKEND_URL = https://aitutor-backend.up.railway.app
+BACKEND_URL = "https://aitutor-backend.up.railway.app"
 
 class AITutorApp:
     def __init__(self):
