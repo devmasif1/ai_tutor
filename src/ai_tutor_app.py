@@ -569,11 +569,21 @@ class AITutorApp:
         return demo
 
     def launch(self):
+        import os
+    
+        port = int(os.getenv("PORT", 7860))  # Railway gives a PORT env var
+    
         print("🚀 Starting AI Tutor App with Quiz-Based Learning...")
-        print("📝 Make sure the FastAPI backend is running on http://localhost:8000")
+        print(f"📝 FastAPI backend should be running on http://0.0.0.0:{port}")
         print("🎯 Focus: Generate quizzes and track learning through quiz reports")
-        
-        self.demo.launch(share=False, debug=True)
+    
+        self.demo.launch(
+            server_name="0.0.0.0",
+            server_port=port,
+            share=False,
+            debug=True
+        )
+
 
     def __del__(self):
         """Cleanup on app deletion"""
