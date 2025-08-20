@@ -478,7 +478,12 @@ class AITutorApp:
                             value="2D Visualization"
                         )
                         show_vis_btn = gr.Button("📈 Show Visualization")
-                        vis_output = gr.Textbox(label="Visualization Status", interactive=False)
+                        vis_output = gr.Plot(
+                                label="Vector Visualization", 
+                                show_label=True,
+                                container=True,
+                                scale=1
+                        )
                         
                         # Management
                         gr.Markdown("#### 🗑️ Management")
