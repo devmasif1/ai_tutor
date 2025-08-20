@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 from sklearn.manifold import TSNE
 from langchain_mongodb import MongoDBAtlasVectorSearch
 
+
 class VectorVisualizer:
     def __init__(self, vectorstore):
         self.vectorstore = vectorstore
@@ -95,9 +96,9 @@ class VectorVisualizer:
             height=600,
             margin=dict(r=20, b=10, l=10, t=40)
         )
-        fig.show()
-        return fig
-        
+        #fig.show()
+        #return fig
+        return fig.to_html(full_html=False)
     def visualize_3d(self):
         """Create 3D visualization - no user_id parameter needed"""
         vectors, documents, doc_types = self._get_mongodb_data()
@@ -137,7 +138,7 @@ class VectorVisualizer:
             height=700,
             margin=dict(r=20, b=10, l=10, t=40)
         )
-        fig.show()
-        return fig
+        #fig.show()
+        return fig.to_html(full_html=False)
     
    
