@@ -629,27 +629,27 @@ class AITutorCore:
             return f"Error adding content for user {self.username}: {str(e)}"
     
     def show_visualization(self, vis_type):
-        """Show vector visualization"""
+        """Show vector visualization - returns Plotly Figure for gr.Plot"""
         if self.KB.vectorstore is None:
-            return "No knowledge base available. Please add some content first."
+            return None  # gr.Plot handles None gracefully
             
         if not self.visualizer:
             try:
                 self.visualizer = VectorVisualizer(self.KB.vectorstore)
             except Exception as e:
-                return f"Could not initialize visualizer: {str(e)}"
+                print(f"Could not initialize visualizer: {str(e)}")
+                return None
         
         try:
             if vis_type == "2D Visualization":
-                self.visualizer.visualize_2d()
-                return "2D visualization displayed"
+                return self.visualizer.visualize_2d()  # Return Plotly Figure
             elif vis_type == "3D Visualization":
-                self.visualizer.visualize_3d()
-                return "3D visualization displayed"
+                return self.visualizer.visualize_3d()  # Return Plotly Figure
             else:
-                return "Please select a visualization type (2D or 3D)"
+                return None
         except Exception as e:
             return f"Visualization failed: {str(e)}"
+
 
     def get_kb_status(self):
         """Get current knowledge base status"""
