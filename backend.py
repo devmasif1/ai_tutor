@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException, Depends, status 
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse,HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
@@ -229,6 +229,13 @@ async def clear_quiz_reports(user_id: str = Depends(verify_token)):
     """Clear all quiz reports for the user"""
     result = quiz_reports.delete_many({"user_id": user_id})
     return {"message": f"Cleared {result.deleted_count} quiz reports"}
+
+
+@app.get("/plot", response_class=HTMLResponse)
+def plot():
+    fig = px.scatter(x=[1,2,3], y=[4,5,6])
+    return HTMLResponse(content=fig.to_html(full_html=False))
+
 
 if __name__ == "__main__":
     import uvicorn
